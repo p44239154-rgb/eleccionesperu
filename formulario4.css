@@ -1,0 +1,120 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal con el borde azul de la pizarra */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 2px solid #4a90e2; 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 400px;
+}
+
+h2.main-title {
+    color: #333;
+    text-align: center;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Grupos de entrada (Nombre y Apellido) */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* Para que el padding no sature el ancho */
+}
+
+/* Títulos de secciones internas */
+h3.section-title {
+    font-size: 14px;
+    color: #4a90e2;
+    margin: 20px 0 10px 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Cajas de opciones (Turnos y Productos) */
+.option-box {
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: #fafbfc;
+    margin-bottom: 15px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #444;
+    cursor: pointer;
+}
+
+.option-item input {
+    margin-right: 10px;
+}
+
+/* Área de Sugerencia */
+.textarea-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+/* Botón ENVIAR (Ovalado) */
+.submit-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 25px; /* Hace el botón ovalado */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles El Paraíso</title>
+    <link rel="stylesheet" href="formulaio2.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Hoteles El Paraiso</h1>
+
+        <form action="https://formsubmit.co/eftol280473@gmail.com" method="post">
+            <h2>Sistema de reserva de habitaciones:</h2>
+
+            <div class="fila">
+                <label for="nombre">Introduzca su nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+
+            <div class="fila">
+                <label for="clave">Introduzca una clave para su identificación (4 letras):</label>
+                <input type="password" id="clave" name="clave" maxlength="4" size="4">
+            </div>
+
+            <div class="bloque">
+                <p>Tipo de habitación</p>
+
+                <label class="opcion">
+                    <input type="radio" name="habitacion" value="individual">
+                    Individual
+                </label>
+
+                <label class="opcion">
+                    <input type="radio" name="habitacion" value="doble" checked>
+                    Doble
+                </label>
+            </div>
+
+            <div class="bloque">
+                <p>Opciones extra:</p>
+
+                <label class="opcion">
+                    <input type="checkbox" name="extra[]" value="desayuno" checked>
+                    Desayuno en cama
+                </label>
+
+                <label class="opcion">
+                    <input type="checkbox" name="extra[]" value="jakuzzi">
+                    Jakuzzi
+                </label>
+
+                <label class="opcion">
+                    <input type="checkbox" name="extra[]" value="climatizador">
+                    Climatizador
+                </label>
+            </div>
+
+            <div class="boton-centro">
+                <button type="submit">¡ENVÍEME!</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

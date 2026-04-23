@@ -1,0 +1,539 @@
+/* --- 1. VARIABLES Y BASE --- */
+:root {
+    --dark-bg: #0b0f19;
+    --card-bg: #161b22;
+    --neon-accent: #00f2ff;
+    --text-main: #ffffff;
+    --text-dim: #8b949e;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0 10px 0;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: var(--neon-accent);
+    text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* --- 2. BARRA DE NAVEGACIÓN Y DESPLEGABLES --- */
+.navbar-blue {
+    background: rgba(11, 15, 25, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--neon-accent);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Cambia esto */
+.navbar-blue > ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-blue ul li { position: relative; }
+
+.navbar-blue ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 18px 20px;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.navbar-blue ul li a:hover {
+    color: var(--neon-accent);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+/* --- 3. INICIO: GRID DE PARTIDOS (CORREGIDO) --- */
+.grid-partidos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* --- 3. INICIO: GRID DE PARTIDOS (CORREGIDO) --- */
+.card-partido {
+    background: var(--card-bg);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-align: center;
+    text-decoration: none; /* Quita el subrayado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+/* ESTA ES LA PARTE CLAVE: */
+.card-partido, 
+.card-partido span, 
+.card-partido:visited {
+    color: #ffffff !important; /* Fuerza el color blanco */
+    text-decoration: none;
+}
+
+.card-partido img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card-partido span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.card-partido:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-accent);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+/* --- 4. CATEGORÍAS (CÍRCULOS) --- */
+.flex-circulos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 60px 20px;
+}
+
+.circulo {
+    width: 180px;
+    height: 180px;
+    border: 3px solid var(--neon-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 242, 255, 0.02);
+    transition: 0.4s;
+}
+
+.circulo:hover {
+    background: var(--neon-accent);
+    color: #0b0f19;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px var(--neon-accent);
+}
+
+/* --- 5. CANDIDATOS: TARJETAS CON FOTO --- */
+.grid-candidatos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.card-candidato {
+    background: #10141d;
+    border: 2px solid #30363d;
+    border-radius: 24px; /* Bordes muy redondeados */
+    width: 320px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.4s;
+}
+
+.card-candidato:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-accent);
+}
+
+.foto-marco {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.foto-marco img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.cargo-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--neon-accent);
+    color: #0b0f19;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    border: 3px solid #10141d;
+    box-shadow: 0 0 15px var(--neon-accent);
+}
+
+.info-candidato {
+    padding: 20px;
+    text-align: center;
+}
+
+.info-candidato h3 {
+    color: var(--neon-accent);
+    margin: 0;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.info-candidato p {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* --- 6. FOOTER Y OTROS --- */
+footer {
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid #30363d;
+    margin-top: auto;
+}
+
+.autor {
+    color: var(--neon-accent);
+    font-weight: 900;
+}
+/* --- 7. LISTA DE DIPUTADOS (ESTILO RANKING) --- */
+.lista-candidatos {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre filas */
+}
+
+.fila-candidato {
+    background: #161b22; /* Color de fondo oscuro */
+    border: 1px solid #30363d;
+    border-radius: 50px; /* Bordes muy redondeados como en la imagen */
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.fila-candidato:hover {
+    border-color: var(--neon-accent);
+    transform: translateX(10px); /* Efecto de desplazamiento al pasar el mouse */
+    background: rgba(0, 242, 255, 0.05);
+}
+
+.candidato-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    border: 2px solid #30363d;
+}
+
+.candidato-info {
+    flex-grow: 1; /* Hace que la info ocupe el espacio central */
+}
+
+.candidato-info h4 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.candidato-info p {
+    color: #8b949e;
+    margin: 2px 0 0 0;
+    font-size: 0.85rem;
+}
+
+.candidato-numero {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--neon-accent); /* Color neón para el número */
+    opacity: 0.8;
+}
+/* --- FORMATO DE LISTA PARA DIPUTADOS --- */
+.lista-diputados {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+.fila-diputado {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.fila-diputado:hover {
+    border-color: var(--neon-accent);
+    transform: translateX(10px);
+    box-shadow: -5px 0 15px var(--neon-accent);
+}
+
+.foto-pequena {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #30363d;
+    margin-right: 20px;
+    background: white; /* Para que el logo resalte */
+}
+
+.foto-pequena img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.info-fila {
+    flex-grow: 1;
+}
+
+.info-fila h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.info-fila p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
+
+.numero-diputado {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--neon-accent);
+    opacity: 0.6;
+}
+
+.fila-diputado:hover .numero-diputado {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--neon-accent);
+}
+/* 1. Asegurar que el contenedor padre no limite el contenido */
+.navbar-blue ul li.dropdown {
+    position: relative;
+}
+
+/* Estilo del submenú oculto */
+.dropdown-content {
+    display: none;            /* Mantiene el menú oculto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #161b22; 
+    min-width: 200px;
+    border: 1px solid var(--neon-accent);
+    border-radius: 0 0 8px 8px;
+    z-index: 9999;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Fuerza a que los elementos se pongan uno debajo de otro */
+.dropdown-content li {
+    width: 100%;
+    display: block !important; 
+}
+
+/* Mostrar al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block !important;
+
+
+}
+.carousel {
+    width: 400px;
+    height: 250px;
+    overflow: hidden; /* 🔥 esto oculta las demás */
+    margin: auto;
+    border-radius: 10px;
+}
+
+.track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%; /* 🔥 ocupa TODO el carrusel */
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.pie-pagina {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.redes-sociales {
+    margin-bottom: 10px;
+}
+
+.icono {
+    color: white;
+    font-size: 24px;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.icono:hover {
+    color: #007bff; /* Cambia al color de tu preferencia */
+}
+
+.pie-pagina {
+    background-color: #618ab3; /* O el color que estés usando */
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #00447b; /* Azul institucional */
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.qr-code img {
+    border: 5px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+}
+
+.qr-code p {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+
+
+
+
+/* Burbuja flotante */
+#chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00447b;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+#chat-bubble:hover { transform: scale(1.1); }
+
+/* Ventana de chat */
+#chat-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background: rgb(56, 11, 219);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.hidden { display: none !important; }
+
+.chat-header { background: #00447b; color: white; padding: 15px; display: flex; justify-content: space-between; }
+
+#chat-body { flex: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; font-size: 14px; }
+
+.chat-footer { display: flex; padding: 10px; border-top: 1px solid #ddd; }
+
+#chat-input { flex: 1; border: none; padding: 5px; outline: none; }
+
+.bot-msg { background: #165ebb; padding: 8px; border-radius: 10px; margin-bottom: 10px; width: fit-content; }

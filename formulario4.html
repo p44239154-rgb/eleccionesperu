@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Ejemplo 4</title>
+    <link rel="stylesheet" href="formulario4.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="main-title">Formulario</h2>
+
+        <form>
+            <div class="input-group">
+                <label>Nombre</label>
+                <input type="text" name="nombre">
+            </div>
+
+            <div class="input-group">
+                <label>Apellidos</label>
+                <input type="text" name="apellidos">
+            </div>
+
+            <h3 class="section-title">Seleccionar turno</h3>
+            <div class="option-box">
+                <label class="option-item"><input type="radio" name="turno"> mañana</label>
+                <label class="option-item"><input type="radio" name="turno" checked> tarde</label>
+                <label class="option-item"><input type="radio" name="turno"> noche</label>
+            </div>
+
+            <h3 class="section-title">Productos</h3>
+            <div class="option-box">
+                <label class="option-item"><input type="checkbox" checked> galletas</label>
+                <label class="option-item"><input type="checkbox"> arroz</label>
+                <label class="option-item"><input type="checkbox"> aceite</label>
+                <label class="option-item"><input type="checkbox"> papa</label>
+            </div>
+
+            <div class="textarea-group">
+                <label>SUGERENCIA</label>
+                <textarea name="sugerencia"></textarea>
+            </div>
+
+            <div class="submit-container">
+                <button type="submit" class="submit-btn">ENVIAR</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

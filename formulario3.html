@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Empleo</title>
+    <link rel="stylesheet" href="formulario3.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Formulario de Empleo</h2>
+
+    <form>
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required>
+
+        <label>Apellidos:</label>
+        <input type="text" name="apellidos" required>
+
+        <label>Horario:</label>
+        <select name="horario">
+            <option>Mañana</option>
+            <option>Tarde</option>
+            <option>Noche</option>
+        </select>
+
+        <label>Selecciona cursos:</label>
+        <select name="cursos" multiple size="4">
+            <option>Java</option>
+            <option>Python</option>
+            <option>HTML5</option>
+            <option>Base de Datos</option>
+        </select>
+
+        <label>Sugerencia:</label>
+        <textarea name="sugerencia" rows="4"></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+</body>
+</html>

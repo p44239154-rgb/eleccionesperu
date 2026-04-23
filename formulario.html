@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pedidos</title>
+    <link rel="stylesheet" href="formulario1.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Formulario de Pedidos</h2>
+        <form action="https://formsubmit.co/eftol280473@gmail.com" method="post">
+            
+            <div class="grupo">
+                <label for="nombre">Nombre del cliente:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese sus nombres" required>
+            </div>
+
+            <div class="grupo">
+                <label for="apellido">Apellidos:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingrese sus apellidos" required>
+            </div>
+
+            <div class="grupo">
+                <label for="direccion">Dirección de entrega:</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Calle, número y ciudad" required>
+            </div>
+            
+            <div class="grupo">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: +51 999..." required>
+            </div>
+
+            <div class="grupo">
+                <label for="productos">Seleccionar Productos (Usa Ctrl/Cmd para varios):</label>
+                <select id="productos" name="productos" multiple required size="8">
+                    <option value="Mouse Inalambrico">Mouse Inalámbrico</option>
+                    <option value="Mouse USB">Mouse USB</option>
+                    <option value="Teclado">Teclado</option>
+                    <option value="Monitor 14">Monitor 14"</option>
+                    <option value="Monitor 17">Monitor 17"</option>
+                    <option value="Monitor 19">Monitor 19"</option>
+                    <option value="Monitor 24">Monitor 24"</option>
+                    <option value="Laptop Lenovo">Laptop Lenovo</option>
+                    <option value="Laptop HP">Laptop HP</option>
+                    <option value="Laptop Acer">Laptop Acer</option>
+                    <option value="Laptop Asus">Laptop Asus</option>
+                    <option value="Laptop Dell">Laptop Dell</option>
+                </select>
+            </div>
+
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+</body>
+</html>
